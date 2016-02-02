@@ -33,7 +33,7 @@ clear all
     slope = 0.05; %slope of the linear baseline topography in m/m
     topomax = 100; %maximum elevation of the inital baseline topography
     suboruprate = 0.003; %subsidence in m/yr
-    baselinemax = -slope*xmax+topomax-(suboruprate*tmax);
+    baselinemax = -slope*xmax+topomax-(suboruprate*tmax); %max of the baseline
 
     %Sea Level Constants
     meansealevel = 0;% average sea level set to zero
@@ -97,17 +97,17 @@ for i=1:imax
     
   
 % Plot results
-    waterlevel = sealevel(i)*ones(size(x));
-    sea = find(sealevel(i)>coralsl);
+    waterlevel = sealevel(i)*ones(size(x)); %water level is similar to sea level
+    sea = find(sealevel(i)>coralsl); %find only where the water does not overlap the coral or bedrock
    
     
     figure(1)
     clf
     
-    plot(x,coralsl,'m','linewidth',3)
+    plot(x,coralsl,'m','linewidth',3) %draw coral line in pink
     hold all
-    plot(x,baseline,'k','linewidth',3)  
-    plot(x(sea),waterlevel(sea),'b','linewidth',3)
+    plot(x,baseline,'k','linewidth',3)  %draw bedrock line in black
+    plot(x(sea),waterlevel(sea),'b','linewidth',3) %draw water line in blue only where not overlapping the coral or bedrock
     
 %     %color the coral pink!
 %     xx = [x,x];        % repeat x values
@@ -121,7 +121,7 @@ for i=1:imax
 %     cc = [baseline, bottomline];
 %     fill(xx,cc,[.91,.92,.87])
     
-    
+    %this is plot formatting
     xlabel('Distance (m)', 'fontname', 'arial', 'fontsize',21)
     ylabel('Depth (m)', 'fontname', 'arial', 'fontsize',21)
     set(gca,'fontsize',18,'fontname','arial')

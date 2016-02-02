@@ -97,17 +97,17 @@ for i=1:imax
     
   
 % Plot results
-    waterlevel = sealevel(i)*ones(size(x));
-    sea = find(sealevel(i)>coralsl);
+    waterlevel = sealevel(i)*ones(size(x)); %water level is similar to sea level
+    sea = find(sealevel(i)>coralsl); %find only where the water line does not overlap the coral or bedrock
    
     
     figure(1)
     clf
     
-    plot(x,coralsl,'m','linewidth',3)
+    plot(x,coralsl,'m','linewidth',3) %draw coral in pink
     hold all
-    plot(x,baseline,'k','linewidth',3)  
-    plot(x(sea),waterlevel(sea),'b','linewidth',3)
+    plot(x,baseline,'k','linewidth',3)  %draw bedrock in black
+    plot(x(sea),waterlevel(sea),'b','linewidth',3) %only draw water where it does not overlap the bedrock or coral
     
 %     %color the coral pink!
 %     xx = [x,x];        % repeat x values
@@ -121,7 +121,7 @@ for i=1:imax
 %     cc = [baseline, bottomline];
 %     fill(xx,cc,[.91,.92,.87])
     
-    
+    %this is plot formatting
     xlabel('Distance (m)', 'fontname', 'arial', 'fontsize',21)
     ylabel('Depth (m)', 'fontname', 'arial', 'fontsize',21)
     set(gca,'fontsize',18,'fontname','arial')
