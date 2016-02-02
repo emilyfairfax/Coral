@@ -14,7 +14,7 @@ clear all
 
     % Temporal Space
     Yrcon = 3.14*10^7; % number of seconds in a year, common coversion
-    dt = 1800; % time step in years
+    dt = 800; % time step in years
     tmax = 120000;% maximum time to run the code in years
     t = 0:dt:tmax;% set up the time array
     imax = length(t);% define imax for time loops
@@ -70,7 +70,7 @@ clear all
 
 for i=1:imax
     %Sea Level oscillates sinusoidally with time
-    sl=sealevel(t(i),ampsealevel,period); % sea level oscillation in meters relative to mean sea level
+   sealevel(1:N) = ampsealevel*sin((2*pi*t(i))/period); % sea level oscillation in meters relative to mean sea level
     
     %Calculate Coral Height with subsidence or uplift change relative to sea level
     coralsubup = coralsl-(suboruprate*dt); % in meters
