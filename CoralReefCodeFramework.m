@@ -32,7 +32,7 @@ clear all
     %positive sign -> subsidence
     slope = 0.05; %slope of the linear baseline topography in m/m
     topomax = 100; %maximum elevation of the inital baseline topography
-    suboruprate = -0.003; %subsidence in m/yr
+    suboruprate = 0.003; %subsidence in m/yr
     baselinemax = -slope*xmax+topomax-(suboruprate*tmax);
 
     %Sea Level Constants
@@ -41,7 +41,7 @@ clear all
     period = 40000; % period of sea level oscillations in years
 
 %Set Up Arrays: note all arrays are made in horizontal space, and need to
-%be the same length as the time array in order for the code to run properly
+%be the same length in order for the code to run properly
     %Set Number of Nodes for Variable Arrays
     N = (xmax/dx)+1; % number of nodes, plus one to make correct length
 

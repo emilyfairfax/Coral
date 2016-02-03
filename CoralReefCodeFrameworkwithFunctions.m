@@ -41,7 +41,7 @@ clear all
     period = 40000; % period of sea level oscillations in years
 
 %Set Up Arrays: note all arrays are made in horizontal space, and need to
-%be the same length as the time array in order for the code to run properly
+%be the same length in order for the code to run properly
     %Set Number of Nodes for Variable Arrays
     N = (xmax/dx)+1; % number of nodes, plus one to make correct length
 
@@ -109,17 +109,17 @@ for i=1:imax
     plot(x,baseline,'k','linewidth',3)  %color the bedrock line black
     plot(x(sea),waterlevel(sea),'b','linewidth',3) %color the sea level line blue only where it does not overlap the coral or bedrock
     
-%     %color the coral pink!
-%     xx = [x,x];        % repeat x values
-%     yy = [coralsl,baseline];   % vector of upper & lower boundaries
-%     fill(xx,yy,[.97, .475, .561])    % fill area defined by x & yy in blue
-%     
-%     %color the bedrock beige!
-%     xx = [x,x];
-%     bottomline=zeros(N:1);
-%     bottomline(1:N)=-200000;
-%     cc = [baseline, bottomline];
-%     fill(xx,cc,[.91,.92,.87])
+    %color the coral pink!
+    xx = [x,x];        % repeat x values
+    yy = [coralsl,baseline];   % vector of upper & lower boundaries
+    fill(xx,yy,[.97, .475, .561])    % fill area defined by x & yy in blue
+    
+    %color the bedrock beige!
+    xx = [x,x];
+    bottomline=zeros(N:1);
+    bottomline(1:N)=-200000;
+    cc = [baseline, bottomline];
+    fill(xx,cc,[.91,.92,.87])
     
     %this is plot formatting
     xlabel('Distance (m)', 'fontname', 'arial', 'fontsize',21)

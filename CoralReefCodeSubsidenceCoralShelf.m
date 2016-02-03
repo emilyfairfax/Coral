@@ -41,7 +41,7 @@ clear all
     period = 40000; % period of sea level oscillations in years
 
 %Set Up Arrays: note all arrays are made in horizontal space, and need to
-%be the same length as the time array in order for the code to run properly
+%be the same length in order for the code to run properly
     %Set Number of Nodes for Variable Arrays
     N = (xmax/dx)+1; % number of nodes, plus one to make correct length
 
